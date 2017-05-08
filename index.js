@@ -38,12 +38,14 @@ function Datos (callback){
     })
 }
 
-Datos((err,dato) => {    
+Datos((err,datos) => {    
     if (err){
         console.error('Infernal error:', err);
         return;
     }
-    
-    console.log('La web del módulo', dato.datoModulo, 'es', dato.datoHomepage, 
-    'y su versión es la', dato.datoVersion);
+    for (let i = 0; i < datos.length; i++) {
+        const dato = datos[i];
+        console.log('La web del módulo', dato.datoModulo, 'es', dato.datoHomepage, 
+        'y su versión es la', dato.datoVersion);
+    }    
 })
